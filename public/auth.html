@@ -1,0 +1,18 @@
+<div id="auth-box">
+    <h2 id="form-title">Login</h2>
+    <form id="auth-form">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Submit</button>
+      <p><a href="#" id="toggle-link">Switch to Register</a></p>
+    </form>
+  </div>
+  
+  <script>
+    document.getElementById('toggle-link').addEventListener('click', function (e) {
+      e.preventDefault();
+      const title = document.getElementById('form-title');
+      title.textContent = title.textContent === 'Login' ? 'Register' : 'Login';
+    });
+  </script>
+  

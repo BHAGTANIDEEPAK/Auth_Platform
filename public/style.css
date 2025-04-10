@@ -1,0 +1,25 @@
+#auth-box {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  input {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    width: 100%;
+  }
+  button {
+    padding: 0.5rem 1rem;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  

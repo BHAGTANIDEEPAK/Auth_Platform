@@ -1,7 +1,26 @@
 (function () {
     const ORIGIN = window.location.origin;
+    const HOSTNAME = window.location.hostname;
     const API_BASE = 'https://auth-platform-gc05.onrender.com';
     const OTP_API = 'https://otp-dispatcher.onrender.com/api/auth';
+
+      // ✅ Define your allowed hostnames
+  const allowedHostnames = [
+    'your-client-site.com',
+    'another-allowed-client.com',
+  ];
+
+  // 🚫 Block unauthorized domains
+  if (!allowedHostnames.includes(HOSTNAME)) {
+    console.warn(`Access denied for hostname: ${HOSTNAME}`);
+    document.body.innerHTML = `
+      <div style="padding:40px; text-align:center; font-family:sans-serif; color:#b00020;">
+        <h2>Unauthorized</h2>
+        <p>This widget is not allowed on this domain.</p>
+      </div>
+    `;
+    return;
+  }
   
     if (localStorage.getItem(ORIGIN)) return;
   

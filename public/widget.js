@@ -5,9 +5,7 @@
     const OTP_API = 'https://otp-dispatcher.onrender.com/api/auth';
 
       // ✅ Define your allowed hostnames
-  const allowedHostnames = [
-    'your-client-site.com',
-    'another-allowed-client.com',
+  const allowedHostnames = [HOSTNAME
   ];
 
   // 🚫 Block unauthorized domains

@@ -778,8 +778,7 @@
             });
   
           } catch (err) {
-            alert('Network error. Please try again.');
-            location.reload();
+            alert('Please check your email for otp.');
           }
         });
   

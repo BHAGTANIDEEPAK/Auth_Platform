@@ -7,6 +7,7 @@
       // ✅ Define your allowed hostnames
   const allowedHostnames = [HOSTNAME
   ];
+  console.log(HOSTNAME)
 
   // 🚫 Block unauthorized domains
   if (!allowedHostnames.includes(HOSTNAME)) {
@@ -20,7 +21,7 @@
     return;
   }
   
-    if (localStorage.getItem(ORIGIN)) return;
+    if (localStorage.getItem(HOSTNAME)) return;
   
     const style = document.createElement('link');
     style.rel = 'stylesheet';
@@ -68,7 +69,7 @@
             const res = await fetch(url, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ email, password, projectURL: ORIGIN })
+              body: JSON.stringify({ email, password, projectURL: HOSTNAME })
             });
   
             const data = await res.json();
@@ -115,7 +116,7 @@
                   return location.reload();
                 }
   
-                localStorage.setItem(ORIGIN, JSON.stringify(data));
+                localStorage.setItem(HOSTNAME, JSON.stringify(data));
                 alert('Login successful!');
                 location.reload();
   
